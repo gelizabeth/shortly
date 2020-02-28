@@ -1,0 +1,267 @@
+@import "variables";
+@import "mixins";
+//Body
+body {
+  font-family: 'Poppins';
+  font-size: 18px;
+  margin: 0;
+  padding-top: 5rem;
+}
+
+.container {
+  padding: 0;
+  width: 80%;
+  margin: 3rem auto 0;
+  text-align: center;
+  @media(max-width: $mobile) {
+    width: 85%;
+  }
+}
+//button
+
+.btn-info {
+  @include font(#fff);
+  background-color: $cyan;
+  border-color: $cyan;
+
+  &:hover {
+    background-color: lighten($cyan,20%);
+    border-color: lighten($cyan,10%);
+  }
+}
+.btn-lg{
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+//headlings
+h1{
+  @include font($very-dark-blue,4.1rem);
+}
+h2{
+@include font($very-dark-blue,2rem,700);
+}
+p{
+  @include font($grayish-violet,1.2rem,400);
+}
+//navbar
+.navbar {
+  position: absolute;
+  padding: 0;
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      @include font($grayish-violet, 0.875rem);
+      margin: 0 1rem;
+    }
+
+    .btn-info {
+      font-size: 0.875rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+  @media(max-width: $lg) {
+    .navbar-collapse {
+      text-align: center;
+      background-color: $dark-violet;
+      margin-top: 1rem;
+      border: 1rem solid $dark-violet;
+      border-radius: 5%;
+    }
+
+    .navbar-nav {
+      .nav-link {
+        @include font(#fff);
+        line-height: 2rem;
+      }
+
+      .login {
+        padding: 0;
+        border: none;
+        margin: 0;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          border: 0.017rem solid $grayish-violet;
+        }
+      }
+
+      .btn-info {
+        width: 100%;
+      }
+    }
+  }
+}
+//header
+.header{
+.row{
+  margin: 4rem 0 0 10%;
+  @media(max-width: $mobile) {
+    margin: 4rem 0;
+    }
+  .content-item{
+    padding: 0;
+    @media(max-width: $mobile) {
+      text-align: center;
+      }
+    &:first-of-type{
+    margin: 4rem auto;
+      .btn-info{
+        width: 35%;
+        padding: 0.675rem;
+      }
+    }
+    &:last-of-type{
+      margin-bottom:  1rem;
+      background-image: url("../../images/illustration-working.svg");
+      background-size: cover;
+      @media(max-width: $mobile) {
+        height: 370px;
+        }
+    }
+  }
+}
+.background{
+  background: linear-gradient(180deg, #FFF 50%, lighten($dark-violet,70%) 50%);
+}
+.container{
+  background-color: $dark-violet;
+  background-image: url("../../images/bg-shorten-desktop.svg");
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  .form-row{
+    justify-content: space-around;
+    .form-control{
+        padding: 1.8rem;
+        border-radius: 10px;
+      }
+      .btn-info{
+          border-radius: 10px;
+        }
+  }
+  @media(max-width: $md){
+    .form-row{
+      align-items: center;
+
+        .btn-info{
+          padding: 0.9rem 0;
+          margin: 1rem 1rem 0 1rem;
+            border-radius: 10px;
+          }
+    }
+  }
+}
+}
+
+//statistics
+.statistics{
+
+  background-color: lighten($dark-violet,70%);
+  .container{
+    margin-top:0;
+    padding: 5rem 0;
+  }
+  .head{
+    width: 50%;
+    margin: 2rem auto;
+    p{
+      font-size: 1rem;
+    }
+    @media(max-width: $mobile){
+      width: 100%;
+    }
+  }
+  .row{
+    padding: 4rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, lighten($dark-violet,70%) 52%, $cyan 52% 54%,lighten($dark-violet,70%)54% 100%);
+    @media(max-width: $mobile){
+      background: linear-gradient(to right, lighten($dark-violet,70%) 48%, $cyan 48% 50%,lighten($dark-violet,70%)50% 100%);
+    }
+    .feature{
+      background-color: #fff;
+      text-align: left;
+      border-radius: 4px;
+      height: 15rem;
+      padding: 0 2rem 2rem;
+      img{
+        width: 5rem;
+        background-color: $dark-violet;
+        border: 1.3rem solid $dark-violet;
+        position: relative;
+        top:-2.5rem;
+        @media(max-width: $mobile){
+          left: 37%;
+      }
+      }
+      p{
+        font-size: 0.9rem;
+      }
+      h3{
+        @include font($dark-violet,1.2rem,700);
+      }
+    }
+  }
+}
+//footer
+.footer{
+  background-color: $very-dark-violet;
+  color: #fff;
+
+.boost{
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: $dark-violet;
+  background-image: url("../../images/bg-boost-desktop.svg");
+  margin-top: 0;
+  padding: 3rem 0;
+  h2{
+      color: #fff;
+  }
+  .btn-lg{
+    width: 15%;
+    @media(max-width: $mobile){
+      width: 50%;
+      padding: 1rem;
+    }
+  }
+
+}
+.bottom{
+.bottom-item{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: left;
+@media(max-width: $md){
+  flex-direction: column;
+  text-align: center;
+  &:last-of-type{
+    padding: 3rem;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  ul{padding: 0;
+  }
+}
+  li{
+    @include font($grayish-violet, 0.8rem, 400);
+    list-style: none;
+    line-height: 1.5rem;
+    &:hover{
+      color: $cyan;
+      cursor: pointer;
+    }
+  }
+}
+
+}
+}
